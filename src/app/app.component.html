@@ -1,11 +1,17 @@
+<span>{{ title }}</span>
+
+<div>{{ customer.pno }}</div>
+
+<div>Street Name: {{ customer.shippingAddress.stNo }}</div>
 <ul>
   <li><a class="active" (click)="onHomeSection()">Home</a></li>
   <li><a (click)="onMenSection()">Men</a></li>
   <li><a (click)="onWomenSection()">Women</a></li>
   <li><a (click)="onKidsSection()">kids</a></li>
 </ul>
+<router-outlet></router-outlet>
 
-@if(showHome) {
+<!-- @if(showHome) {
 <app-home></app-home>
 } @if(showMen) {
 <app-men></app-men>
@@ -13,7 +19,7 @@
 <app-women></app-women>
 } @if(showKids) {
 <app-kids></app-kids>
-}
+} -->
 <!-- <h1>
   Welcome to
   <span style="color: rgb(203, 75, 28)"><b>Sneha's Couture</b></span>

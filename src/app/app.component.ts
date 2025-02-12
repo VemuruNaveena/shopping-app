@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  
+  router = inject(Router);
+
   title = 'shoppingApp';
   outfitName: string = 'Sherwani';
   outfitPrice: number  = 100;
@@ -34,30 +38,36 @@ export class AppComponent {
   showKids: boolean = false;
 
   onMenSection() {
-    this.showMen = true;
-    this.showHome = false;
-    this.showWomen= false;
-    this.showKids = false;
+    // this.showMen = true;
+    // this.showHome = false;
+    // this.showWomen= false;
+    // this.showKids = false;
+    this.router.navigate(['men']);
   }
 
   onHomeSection() {
-    this.showHome = true;
-    this.showMen = false;
-    this.showWomen= false;
-    this.showKids = false;
+    // this.showHome = true;
+    // this.showMen = false;
+    // this.showWomen= false;
+    // this.showKids = false;
+    this.router.navigate(['home']);
   }
   onWomenSection() {
-      this.showWomen = true;
-    this.showKids = false;
-    this.showMen = false;
-this.showHome = false;
+    this.router.navigate(['women']);
+
+//       this.showWomen = true;
+//     this.showKids = false;
+//     this.showMen = false;
+// this.showHome = false;
 
   }
   onKidsSection() {
-    this.showKids = true;
-    this.showMen = false;
-this.showHome = false;
-this.showWomen = false;
+    this.router.navigate(['kids']);
+
+//     this.showKids = true;
+//     this.showMen = false;
+// this.showHome = false;
+// this.showWomen = false;
 
   }
 
