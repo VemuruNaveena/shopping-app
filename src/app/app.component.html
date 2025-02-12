@@ -1,0 +1,35 @@
+<ul>
+  <li><a class="active" (click)="onHomeSection()">Home</a></li>
+  <li><a (click)="onMenSection()">Men</a></li>
+  <li><a (click)="onWomenSection()">Women</a></li>
+  <li><a (click)="onKidsSection()">kids</a></li>
+</ul>
+
+@if(showHome) {
+<app-home></app-home>
+} @if(showMen) {
+<app-men></app-men>
+} @if(showWomen) {
+<app-women></app-women>
+} @if(showKids) {
+<app-kids></app-kids>
+}
+<!-- <h1>
+  Welcome to
+  <span style="color: rgb(203, 75, 28)"><b>Sneha's Couture</b></span>
+</h1>
+<h5>
+  <pre>                                                         - <q><i>A final destination</i>  </q></pre>
+</h5>
+<app-bride></app-bride>
+<app-groom></app-groom>
+<button (click)="bridesMaid()">Bride's Maid</button><br />
+<br />
+
+<input type="text" />
+
+<img src="images/Frock Lehenga.jpg" alt="" />
+<img src="images/Georgette Sherwani.jpg" alt="" />
+<img src="images/halfSaree.jpg " alt="" />
+<img src="images/Kurta.jpg" alt="" />
+ -->
