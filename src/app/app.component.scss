@@ -1,25 +1,10 @@
-h1,h5{
-    text-align: center;
-}
-
-img{
-    width: 311px;
-    height: 450px;
-    object-fit:fill;
-}
-
-
-
-button:hover{
-    background-color: rgb(47, 42, 56);
-}
 
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #271e31;
   }
   
   li {
@@ -37,3 +22,18 @@ ul {
   li a:hover {
     background-color: #111;
   }
+
+  .main-width {
+    width: 70%;
+    margin: 25px auto;
+  }
+
+//   h1,h5{
+//     text-align: center;
+// }
+
+// img{
+//     width: 311px;
+//     height: 450px;
+//     object-fit:fill;
+// }

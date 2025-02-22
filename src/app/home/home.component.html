@@ -1,1 +1,19 @@
 <p>home works!</p>
+<!-- <button (click)="search()">Search</button> -->
+<button (click)="getDetails('c101', 100)">Details</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Vehicle Type</th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let vehicle of vehicleList">
+    <td>{{ vehicle.MakeId }}</td>
+    <td>{{ vehicle.MakeName }}</td>
+    <td>{{ vehicle.VehicleTypeName }}</td>
+  </tr>
+</table>
