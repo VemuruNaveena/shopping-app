@@ -23,7 +23,14 @@ export class UniversityComponent {
     this.universityService.fetchData().subscribe(
       (response: universityResponseApiI[]) => {
         console.log(response);
-        this.universityList = response;
+
+        let updatedUniversitieList: universityResponseApiI[] = [];
+        // i will go into each and evry object in the array
+        response.forEach((univesity) => {
+          univesity.review = 'Good';
+          updatedUniversitieList.push(univesity);
+        })
+        this.universityList = updatedUniversitieList;
         console.log(this.universityList);
         
 

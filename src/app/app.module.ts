@@ -15,10 +15,6 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    MenComponent,
-    WomenComponent,
-    KidsComponent,
-    UniversityComponent,
     HeaderComponent
   ],
   imports: [

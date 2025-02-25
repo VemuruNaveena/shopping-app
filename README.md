@@ -23,3 +23,9 @@ color: white;
   <button (click)="groom()">Groom</button><br />
   <button (click)="bridesMaid()">Bride's Maid</button>
 </div>
+
+# topics
+
+1. Class, variables, functions, functions with return types, ...spread operator, forLoop
+2. Routing, lazy loading, dependency injection, interpolation
+3. API calls (GET, PUT, POST, DELETE)

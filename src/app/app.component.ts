@@ -74,6 +74,10 @@ export class AppComponent {
     
   }
 
+  navigateToGames() {
+    this.router.navigate(['games']);
+  }
+
  
 
 }

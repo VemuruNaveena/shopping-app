@@ -14,12 +14,38 @@ export class HomeComponent {
   homeService = inject(HomeService);
   vehicleList: VehicleDetailsI[] = [];
 
-  courseList: string[] = ['Angular', 'React', 'vue'];
-  course: CourseI = {
+
+  courseL: string[] = ['Angular', 'React', 'vue'];
+  course: any = {
     name: 'Node', 
     id: 'n_01'
   }
   // this.course.name
+
+
+  courseList = [
+    
+    {name: 'Angular', version: 19},
+    {name: 'React', version: 18},
+    {name: 'vue', version: 4}
+  ];
+
+  updateCourseList() {
+    // console.log(this.course);
+    // debugger;
+    // this.course.name = 'Node js';
+    // //this.course.price = 10;
+    // this.course['price'] = 20;
+    // console.log(this.course);
+    console.log(this.courseList);
+debugger;
+    let newObj = {name: 'Mongo DB', version: 6};
+    this.courseList.unshift(newObj);
+    console.log(this.courseList);
+    
+  }
+
+
 
 
   constructor(){
@@ -29,11 +55,13 @@ export class HomeComponent {
 
   // i=3 l=3
   getDetails(id: string, price: number) {
+    this.course.price = 20;
+    this.course['price'] = 20;
     // for(let i=0; i<= this.courseList.length; i++) {
     //   console.log(this.courseList[i]);
     // }
 
-    this.courseList.forEach((course) => {
+    this.courseL.forEach((course) => {
       console.log(course);
     })
 
