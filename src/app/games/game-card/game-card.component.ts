@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { GameI } from '../games-interface';
 
 @Component({
   selector: 'app-game-card',
   standalone: false,
   templateUrl: './game-card.component.html',
-  styleUrl: './game-card.component.scss'
+  styleUrl: '../games.component.scss',
 })
 export class GameCardComponent {
-
+  @Input() incomingGame: GameI;
 }

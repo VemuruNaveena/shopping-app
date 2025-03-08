@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
   
-  router = inject(Router);
 
   title = 'ShoppingApp';
   outfitName: string = 'Jeans';  //variables
@@ -36,47 +35,6 @@ export class AppComponent {
   showWomen: boolean = false;
   showKids: boolean = false;
 
-  onMenSection() {
-    // this.showMen = true;
-    // this.showHome = false;
-    // this.showWomen= false;
-    // this.showKids = false;
-    this.router.navigate(['men']);
-  }
-
-  onHomeSection() {
-    // this.showHome = true;
-    // this.showMen = false;
-    // this.showWomen= false;
-    // this.showKids = false;
-    this.router.navigate(['home']);
-  }
-  onWomenSection() {
-  //  this.showWomen = true;
-  //  this.showKids = false;
-  //  this.showMen = false;
-  //  this.showHome = false;
-  this.router.navigate(['women']);
-
-  }
-  onKidsSection() {
-    // this.showKids = true;
-    // this.showMen = false;
-    // this.showHome = false;
-    // this.showWomen = false;
-    this.router.navigate(['kids']);
-
-  }
-
-  onUniversitySection(){
-
-    this.router.navigate(['university']);
-    
-  }
-
-  navigateToGames() {
-    this.router.navigate(['games']);
-  }
 
  
 

@@ -1,1 +1,21 @@
-<p>header works!</p>
+<!-- <ul>
+  <li><a class="active" (click)="navigateTo('home')">Home</a></li>
+  <li><a (click)="navigateTo('men')">Men</a></li>
+  <li><a (click)="navigateTo('women')">Women</a></li>
+  <li><a (click)="navigateTo('kids')">kids</a></li>
+  <li><a (click)="navigateTo('university')">University</a></li>
+  <li><a (click)="navigateTo('games')">Games</a></li>
+  <li><a (click)="navigateTo('college')">College</a></li>
+  <li><a (click)="navigateTo('signup')">Signup</a></li>
+  <li><a (click)="navigateTo('login')">Login</a></li>
+</ul> -->
+
+<ul>
+  @for(nav of navItems; track $index) {
+  <li>
+    <a [routerLink]="nav.routePath" routerLinkActive="active-link">{{
+      nav.label
+    }}</a>
+  </li>
+  }
+</ul>

@@ -1,12 +1,16 @@
 import { Component, inject } from '@angular/core';
 import { HomeService } from '../home.service';
-import { CourseI, VehicleApiResponseI, VehicleDetailsI } from './home-interfaces';
+import {
+  CourseI,
+  VehicleApiResponseI,
+  VehicleDetailsI,
+} from './home-interfaces';
 
 @Component({
   selector: 'app-home',
   standalone: false,
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
   name: string = 'Api topic';
@@ -14,20 +18,17 @@ export class HomeComponent {
   homeService = inject(HomeService);
   vehicleList: VehicleDetailsI[] = [];
 
-
   courseL: string[] = ['Angular', 'React', 'vue'];
   course: any = {
-    name: 'Node', 
-    id: 'n_01'
-  }
+    name: 'Node',
+    id: 'n_01',
+  };
   // this.course.name
 
-
   courseList = [
-    
-    {name: 'Angular', version: 19},
-    {name: 'React', version: 18},
-    {name: 'vue', version: 4}
+    { name: 'Angular', version: 19 },
+    { name: 'React', version: 18 },
+    { name: 'vue', version: 4 },
   ];
 
   updateCourseList() {
@@ -38,17 +39,12 @@ export class HomeComponent {
     // this.course['price'] = 20;
     // console.log(this.course);
     console.log(this.courseList);
-debugger;
-    let newObj = {name: 'Mongo DB', version: 6};
+    let newObj = { name: 'Mongo DB', version: 6 };
     this.courseList.unshift(newObj);
     console.log(this.courseList);
-    
   }
 
-
-
-
-  constructor(){
+  constructor() {
     console.log('con');
     this.search();
   }
@@ -63,31 +59,26 @@ debugger;
 
     this.courseL.forEach((course) => {
       console.log(course);
-    })
-
+    });
   }
- 
 
-  search(): void{
+  search(): void {
     console.log('abc');
     this.homeService.fetchData().subscribe(
       (response: VehicleApiResponseI) => {
         console.log(response);
         this.vehicleList = response.Results;
-        console.log(this.vehicleList)
+        console.log(this.vehicleList);
       },
       (error: any) => {
-        console.log(error)
+        console.log(error);
       }
-    )
+    );
   }
-
-
-
 }
 
 // () {
-    
+
 // }
 
 //() => {
@@ -97,4 +88,3 @@ debugger;
 // (id: string) => {
 
 // }
-

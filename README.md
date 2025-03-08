@@ -24,8 +24,20 @@ color: white;
   <button (click)="bridesMaid()">Bride's Maid</button>
 </div>
 
+https://fastly.picsum.photos/id/51/200/300.jpg?hmac=w7933XDRbSqrql6BuyEfFBOeVsO60iU5N_OS5FbO6wQ
+POST
+{
+userName: 'some val',
+userEmail:'some val',
+password: 'some val',
+confirmPassword: 'some val',
+role: 'some val',
+}
+
 # topics
 
 1. Class, variables, functions, functions with return types, ...spread operator, forLoop
-2. Routing, lazy loading, dependency injection, interpolation
-3. API calls (GET, PUT, POST, DELETE)
+2. Routing, lazy loading, interpolation
+3. API calls (GET, PUT, POST, DELETE), dependency injection
+4. Component - to - Component communication (@Input)
+5. Reactive Forms( Backend, Mongodb)

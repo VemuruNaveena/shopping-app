@@ -9,8 +9,15 @@ button{
     color: white;
     border-color: white;
     cursor:pointer;
+
+    
     
  }
+
+ button:disabled {
+  background-color: grey;
+  cursor: none;
+}
  table {
     width: 100%;
     border-collapse: collapse;
@@ -35,4 +42,9 @@ button{
   tr a,
   tr svg {
     color: darkblue;
+  }
+
+  .error-msg {
+    padding: 10px 0;
+    color: red;
   }

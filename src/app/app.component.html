@@ -1,17 +1,10 @@
-<span
+<!-- <span
   ><b>{{ title }}</b></span
 >
 <div><b>Phone number: </b> {{ customer.pno }}</div>
-<div><b>Street Name:</b> {{ customer.shippingAddress.stNo }}</div>
+<div><b>Street Name:</b> {{ customer.shippingAddress.stNo }}</div> -->
+<app-header></app-header>
 
-<ul>
-  <li><a class="active" (click)="onHomeSection()">Home</a></li>
-  <li><a (click)="onMenSection()">Men</a></li>
-  <li><a (click)="onWomenSection()">Women</a></li>
-  <li><a (click)="onKidsSection()">kids</a></li>
-  <li><a (click)="onUniversitySection()">University</a></li>
-  <li><a (click)="navigateToGames()">Games</a></li>
-</ul>
 <div class="main-width">
   <router-outlet></router-outlet>
 </div>
