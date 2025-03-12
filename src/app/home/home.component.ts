@@ -31,6 +31,10 @@ export class HomeComponent {
     { name: 'vue', version: 4 },
   ];
 
+  changeTopicName() {
+    this.name = 'Routing Topic';
+  }
+
   updateCourseList() {
     // console.log(this.course);
     // debugger;

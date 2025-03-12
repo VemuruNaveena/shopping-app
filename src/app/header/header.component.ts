@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   router = inject(Router);
 
+  name = 'Angular';
+
   navItems: any[] = [
     { routePath: 'home', label: 'Home' },
     { routePath: 'men', label: 'Men' },
@@ -18,12 +20,17 @@ export class HeaderComponent {
     { routePath: 'university', label: 'University' },
     { routePath: 'games', label: 'Games' },
     { routePath: 'college', label: 'COllege' },
-    { routePath: 'user', label: 'User' },
+    { routePath: 'users', label: 'User' },
     { routePath: 'signup', label: 'Signup' },
     { routePath: 'login', label: 'Login' },
+    { routePath: 'Udemy', label: 'Udemy' },
   ];
 
   // navigateTo(path: string) {
   //   this.router.navigate([path]);
   // }
+
+  runFunction() {
+    this.name = 'React';
+  }
 }

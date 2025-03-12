@@ -1,1 +1,20 @@
-<p>user works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  @for(user of usersList; track $index) {
+  <tr>
+    <td>{{ user.userName | titlecase }}</td>
+    <td>{{ user.role | uppercase }}</td>
+  </tr>
+  }
+</table>
+
+{{ 10 | currency }}
+
+{{ 80 | percent }}
+
+234-453-5632 (704) 874-8314

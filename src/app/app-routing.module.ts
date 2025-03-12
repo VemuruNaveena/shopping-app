@@ -5,6 +5,8 @@ import { MenComponent } from './men/men.component';
 import { CollegeComponent } from './college/college.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
+import { UdemyComponent } from './udemy/udemy.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -35,6 +37,8 @@ const routes: Routes = [
   { path: 'college', component: CollegeComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'users', component: UserComponent },
+  { path: 'Udemy', component: UdemyComponent },
 ];
 
 @NgModule({
