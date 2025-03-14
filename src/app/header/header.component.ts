@@ -1,5 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserProfileService } from '../user-profile.service';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +9,13 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   router = inject(Router);
+  userProfileService = inject(UserProfileService);
+  cartService = inject(CartService);
+
+  loggedInUsername: string;
+  noOfItemsAddedToCart: number = 0;
 
   name = 'Angular';
 
@@ -26,6 +33,24 @@ export class HeaderComponent {
     { routePath: 'Udemy', label: 'Udemy' },
   ];
 
+  ngOnInit() {
+    this.userProfileService.userProfileInfo.subscribe(
+      (data) => {
+        console.log(data);
+        this.loggedInUsername = data;
+      },
+      () => {}
+    );
+
+    this.cartService.gamesListBs.subscribe(
+      (games) => {
+        console.log(games);
+        this.noOfItemsAddedToCart = games.length;
+      },
+      () => {}
+    );
+  }
+
   // navigateTo(path: string) {
   //   this.router.navigate([path]);
   // }
@@ -33,4 +58,8 @@ export class HeaderComponent {
   runFunction() {
     this.name = 'React';
   }
+
+  // getUserName() {
+  //   this.loggedInUsername = this.userProfileService.userName;
+  // }
 }

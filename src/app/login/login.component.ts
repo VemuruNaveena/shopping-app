@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SignUpService } from '../sign-up.service';
 import { Router } from '@angular/router';
+import { UserProfileService } from '../user-profile.service';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  signUpService = inject(SignUpService);
-  router = inject(Router);
+  private signUpService = inject(SignUpService);
+  private userProfileService = inject(UserProfileService);
+  private router = inject(Router);
   invalidCredentials: boolean = false;
 
   loginForm: FormGroup;
@@ -20,7 +22,7 @@ export class LoginComponent {
     this.createForm();
   }
 
-  createForm() {
+  private createForm() {
     this.loginForm = new FormGroup({
       userName: new FormControl(null, [
         Validators.required,
@@ -35,14 +37,33 @@ export class LoginComponent {
     console.log(this.loginForm);
     this.invalidCredentials = false;
     this.signUpService.loginUserApi(this.loginForm.value).subscribe(
-      (response) => {
-        console.log(response);
-        this.router.navigate(['home']);
+      (response: any) => {
+        this.handleSuccess(response);
       },
       (error) => {
-        console.log(error);
-        this.invalidCredentials = true;
+        this.handleError(error);
       }
     );
   }
+
+  private handleSuccess(response) {
+    console.log(response);
+    //new service - variable
+    //this.userProfileService.userName = response.data.user.userName;
+    this.userProfileService.updateUserName(response.data.user.userName);
+    this.router.navigate(['home']);
+  }
+
+  private handleError(error) {
+    console.log(error);
+    this.invalidCredentials = true;
+  }
 }
+
+// true && true && true = true
+// true && false && true = false
+// false && false = false
+
+// true || true = true
+// true || false = true
+// false || false = false
