@@ -26,11 +26,11 @@ export class HeaderComponent implements OnInit {
     { routePath: 'kids', label: 'Kids' },
     { routePath: 'university', label: 'University' },
     { routePath: 'games', label: 'Games' },
-    { routePath: 'college', label: 'COllege' },
+    { routePath: 'college', label: 'College' },
     { routePath: 'users', label: 'User' },
     { routePath: 'signup', label: 'Signup' },
     { routePath: 'login', label: 'Login' },
-    { routePath: 'Udemy', label: 'Udemy' },
+    { routePath: 'udemy', label: 'Udemy' },
   ];
 
   ngOnInit() {

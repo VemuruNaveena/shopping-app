@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SignUpService } from '../sign-up.service';
 import { Router } from '@angular/router';
 import { UserProfileService } from '../user-profile.service';
+import { loginResponseApi } from './login-interfaces';
 
 @Component({
   selector: 'app-login',
@@ -37,7 +38,7 @@ export class LoginComponent {
     console.log(this.loginForm);
     this.invalidCredentials = false;
     this.signUpService.loginUserApi(this.loginForm.value).subscribe(
-      (response: any) => {
+      (response: loginResponseApi) => {
         this.handleSuccess(response);
       },
       (error) => {

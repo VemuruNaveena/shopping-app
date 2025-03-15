@@ -38,7 +38,7 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'login', component: LoginComponent },
   { path: 'users', component: UserComponent },
-  { path: 'Udemy', component: UdemyComponent },
+  { path: 'udemy', component: UdemyComponent },
 ];
 
 @NgModule({

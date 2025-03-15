@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { loginResponseApi } from './login/login-interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ export class SignUpService {
     );
   }
 
-  loginUserApi(userInfo: any) {
+  loginUserApi(userInfo: loginResponseApi) {
     return this.http.post('http://localhost:3010/api/login', userInfo);
   }
 }

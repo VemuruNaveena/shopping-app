@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { MenComponent } from './men/men.component';
 import { WomenComponent } from './women/women.component';
 import { KidsComponent } from './kids/kids.component';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { UniversityComponent } from './university/university.component';
 import { HeaderComponent } from './header/header.component';
 import { CollegeComponent } from './college/college.component';
@@ -17,6 +17,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { UdemyComponent } from './udemy/udemy.component';
+import { appInterceptor } from './app.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { UdemyComponent } from './udemy/udemy.component';
     UdemyComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [provideHttpClient()],
+  providers: [provideHttpClient(withInterceptors([appInterceptor]))],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
