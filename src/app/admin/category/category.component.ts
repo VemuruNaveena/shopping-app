@@ -20,6 +20,7 @@ export class CategoryComponent {
     this.categoryService.fetchCategory(this.categoryForm.value).subscribe(
       (response: categoryApiI) => {
         console.log(response);
+        this.categoryForm.reset();
       },
       (error: any) => {}
     );

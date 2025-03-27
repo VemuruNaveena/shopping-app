@@ -177,5 +177,34 @@ menu-item a:hover {
 .mar-t-10 {
 margin-top: 10px;
 }
-  
+
+select {
+  width: 48%;
+  padding: 1px;
+  background-color: white;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+}
+
+
+/* Style when focused */
+select:focus {
+  border-color: #6177ab;
+}
+
+/* Disable default dropdown arrow (optional) */
+select::-ms-expand {
+  display: none;
+}
+
+/* Style dropdown options */
+option {
+  padding: 10px;
+  font-size: 15px;
+  background: white;
+  color: black;
+  width: 40%;
+}
   

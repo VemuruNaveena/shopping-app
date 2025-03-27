@@ -23,12 +23,13 @@
   <input type="number" name="price" id="price" formControlName="price" />
   <br />
   <label for="">categoryType:</label>
-  <input
-    type="text"
-    name="categoryType"
-    id="categoryType"
-    formControlName="categoryType"
-  />
+  <select name="categoryType" id="categoryType" formControlName="categoryType">
+    @for(cat of catList; track $index) {
+    <option [value]="cat.code">{{ cat.type }}</option>
+    }
+  </select>
   <br />
   <button (click)="createCourse()">Create Course</button>
 </form>
+
+<app-all-courses [courseListInput]="courseList"></app-all-courses>

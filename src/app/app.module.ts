@@ -28,6 +28,7 @@ import { ProfessorComponent } from './college/professor/professor.component';
 import { CategoryComponent } from './admin/category/category.component';
 import { AccountTypeComponent } from './admin/account-type/account-type.component';
 import { AdminComponent } from './admin/admin.component';
+import { AllCoursesComponent } from './udemy/add/all-courses/all-courses.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { AdminComponent } from './admin/admin.component';
     AdminComponent,
     CategoryComponent,
     AccountTypeComponent,
+    AllCoursesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [

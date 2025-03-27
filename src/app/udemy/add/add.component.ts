@@ -10,6 +10,9 @@ import { udemyApiI } from '../udemy interfaces';
   styleUrl: './add.component.scss',
 })
 export class AddComponent {
+  catList = [];
+  courseList = [];
+
   udemyService = inject(UdemyService);
   searchForm = new FormGroup({
     course_id: new FormControl(),
@@ -20,12 +23,39 @@ export class AddComponent {
   });
   // constructor(private udemyService: UdemyService) {}
 
+  constructor() {
+    this.udemyService.getAllCategories().subscribe(
+      (response) => {
+        console.log(response);
+        this.catList = response['data'];
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    this.getCourses();
+  }
+
+  getCourses() {
+    this.udemyService.getAllCourses().subscribe(
+      (response) => {
+        console.log(response);
+        this.courseList = response['data'];
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
+
   createCourse(): void {
     console.log(this.searchForm);
     console.log(this.searchForm.value);
     this.udemyService.createCourseApi(this.searchForm.value).subscribe(
       (response: udemyApiI) => {
         console.log(response);
+        this.searchForm.reset();
+        this.getCourses();
       },
       (error: any) => {
         console.log(error);

@@ -21,13 +21,18 @@ export class UdemyService {
     return response;
   }
 
-  getAllCourses() {
-    // add custom header
-    //
+  getAllCategories() {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2NhNGNjNzE1NDAxYzJiMThiMzljMjkiLCJpYXQiOjE3NDE5MTM3OTR9.garlF-MVF80oTngqbsXLUuEM5FLRIUuPvQrGf5ScMOE`,
+    });
+    const response = this.http.get('http://localhost:3010/api/categories', {
+      headers: headers,
+    });
+    return response;
   }
 
-  getEnrolledCourses() {
-    // add custom header
-    // http call
+  getAllCourses() {
+    const response = this.http.get('http://localhost:3010/api/getAllCourses');
+    return response;
   }
 }
