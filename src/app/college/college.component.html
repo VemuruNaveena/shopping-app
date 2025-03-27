@@ -3,22 +3,16 @@
 <button (click)="fetchUniveristiesByCountry('United States')">
   United States
 </button> -->
-<form [formGroup]="seachForm">
-  <input
-    type="text"
-    placeholder="Enter Country..."
-    formControlName="countryName"
-  />
-  <!-- <input type="text" placeholder="Enter City..." formControlName="cityName" /> -->
-  <button [disabled]="!seachForm.valid" (click)="seachByCountry()">
-    Search
-  </button>
-</form>
 
-@if(isError) {
-<div class="error-message">
-  {{ errorMessage }}
+<div class="horizontal-menu">
+  @for (item of navItems; track $index) {
+  <a [routerLink]="item.path" routerLinkActive="active-menu">{{
+    item.label
+  }}</a>
+
+  }
 </div>
-} @if(collegeList.length > 0) {
-<app-college-table [collegeList]="collegeList"></app-college-table>
-}
+
+<div class="main">
+  <router-outlet></router-outlet>
+</div>

@@ -1,5 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { UserService } from '../user.service';
+import { userApi } from '../login/login-interfaces';
+import { userApiI } from './user-interfaces';
+import { UserProfileService } from '../user-profile.service';
 
 @Component({
   selector: 'app-user',
@@ -9,6 +12,7 @@ import { UserService } from '../user.service';
 })
 export class UserComponent {
   userService = inject(UserService);
+  ups = inject(UserProfileService);
   usersList: any[] = [];
 
   constructor() {
@@ -20,14 +24,17 @@ export class UserComponent {
     this.getAllUsers();
   }
 
-  getAllUsers() {
+  getAllUsers(): void {
+    this.ups.show();
     this.userService.fetchUsers().subscribe(
-      (resp) => {
+      (resp: userApiI) => {
         console.log(resp);
         this.usersList = resp['data'];
+        this.ups.hide();
       },
-      (error) => {
+      (error: any) => {
         console.log(error);
+        this.ups.hide();
       }
     );
   }

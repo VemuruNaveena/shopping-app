@@ -10,35 +10,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrl: './college.component.scss',
 })
 export class CollegeComponent {
-  collegeService = inject(CollegeService);
-  collegeList: universityResponseApiI[] = [];
-  errorMessage = 'Something went wrong';
-  isError: boolean = false;
-  selectedCountryName = '';
-
-  seachForm = new FormGroup({
-    countryName: new FormControl('', [Validators.required]),
-    // cityName: new FormControl(),
-  });
-
-  seachByCountry() {
-    console.log(this.seachForm);
-    console.log(this.seachForm.value);
-    console.log(this.seachForm.value.countryName);
-
-    this.collegeService
-      .fetchByCountry(this.seachForm.value.countryName)
-      .subscribe(
-        (response: universityResponseApiI[]) => {
-          console.log(response);
-          this.collegeList = response;
-          this.isError = false;
-        },
-        (error) => {
-          console.log(error);
-          this.isError = true;
-          this.collegeList = [];
-        }
-      );
-  }
+  navItems = [
+    { label: 'Student', path: '/college/student' },
+    { label: 'Professor', path: '/college/professor' },
+    { label: 'Admin', path: '/college/admin' },
+  ];
 }

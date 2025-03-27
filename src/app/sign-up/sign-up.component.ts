@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SignUpService } from '../sign-up.service';
+import { signUpApiI } from './sign-up interfaces';
+import { UserProfileService } from '../user-profile.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,6 +12,7 @@ import { SignUpService } from '../sign-up.service';
 })
 export class SignUpComponent {
   signUpService = inject(SignUpService);
+  userProfileService = inject(UserProfileService);
 
   signupFrom = new FormGroup({
     userName: new FormControl(),
@@ -19,37 +22,19 @@ export class SignUpComponent {
     role: new FormControl(),
   });
 
-  signUpUser() {
+  signUpUser(): void {
+    this.userProfileService.show();
     console.log(this.signupFrom);
     const fromvalues = this.signupFrom.value;
     this.signUpService.signUpUserApi(fromvalues).subscribe(
-      (response) => {
+      (response: signUpApiI) => {
         console.log(response);
+        this.userProfileService.hide();
       },
-      (error) => {
+      (error: any) => {
         console.log('Error', error);
+        this.userProfileService.hide();
       }
     );
   }
 }
-
-// http://localhost:3010/api/signup - POST
-// {
-//   userName: 'val',
-//     password: 'val',
-//     email: 'val',
-//     role: 'val'
-// }
-
-// email
-// :
-// "test@gmail.com"
-// password
-// :
-// "test@123"
-// role
-// :
-// "student"
-// userName
-// :
-// "test"

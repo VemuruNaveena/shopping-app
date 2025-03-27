@@ -10,26 +10,10 @@ import { UniversityService } from '../university.service';
   styleUrl: './udemy.component.scss',
 })
 export class UdemyComponent {
-  // udemyService = inject(UdemyService);
-  searchForm = new FormGroup({
-    course_id: new FormControl(),
-    title: new FormControl(),
-    description: new FormControl(),
-    price: new FormControl(),
-    categoryType: new FormControl(),
-  });
-  constructor(private udemyService: UdemyService) {}
-
-  createCourse() {
-    console.log(this.searchForm);
-    console.log(this.searchForm.value);
-    this.udemyService.createCourseApi(this.searchForm.value).subscribe(
-      (response) => {
-        console.log(response);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
+  navItems = [
+    { label: 'Add Course', path: '/udemy/add' },
+    { label: 'Buy Course', path: '/udemy/buy' },
+    { label: 'Purchase Course', path: '/udemy/purchase' },
+    { label: 'Udemy Profile', path: '/udemy/update' },
+  ];
 }

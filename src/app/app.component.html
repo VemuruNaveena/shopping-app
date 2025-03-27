@@ -1,13 +1,14 @@
-<!-- <span
-  ><b>{{ title }}</b></span
->
-<div><b>Phone number: </b> {{ customer.pno }}</div>
-<div><b>Street Name:</b> {{ customer.shippingAddress.stNo }}</div> -->
 <app-header></app-header>
 
 <div class="main-width">
   <router-outlet></router-outlet>
 </div>
+
+@if(showSpinner) {
+<div class="spinner-overlay">
+  <div class="spinner"></div>
+</div>
+}
 
 <!-- @if(showHome) {
 <app-home></app-home>
@@ -18,22 +19,3 @@
 } @if(showKids) {
 <app-kids></app-kids>
 } -->
-<!-- <h1>
-  Welcome to
-  <span style="color: rgb(203, 75, 28)"><b>Sneha's Couture</b></span>
-</h1>
-<h5>
-  <pre>                                                         - <q><i>A final destination</i>  </q></pre>
-</h5>
-<app-bride></app-bride>
-<app-groom></app-groom>
-<button (click)="bridesMaid()">Bride's Maid</button><br />
-<br />
-
-<input type="text" />
-
-<img src="images/Frock Lehenga.jpg" alt="" />
-<img src="images/Georgette Sherwani.jpg" alt="" />
-<img src="images/halfSaree.jpg " alt="" />
-<img src="images/Kurta.jpg" alt="" />
- -->

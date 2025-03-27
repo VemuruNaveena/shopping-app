@@ -1,0 +1,9 @@
+<form [formGroup]="categoryForm">
+  <label for="">Category Type</label>
+  <input type="text" name="type" id="type" formControlName="type" />
+  <br />
+  <label for="">Category Code</label>
+  <input type="text" name="code" id="code" formControlName="code" />
+  <br />
+  <button (click)="create()">Create</button>
+</form>

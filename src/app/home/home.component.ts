@@ -23,7 +23,6 @@ export class HomeComponent {
     name: 'Node',
     id: 'n_01',
   };
-  // this.course.name
 
   courseList = [
     { name: 'Angular', version: 19 },
@@ -80,15 +79,3 @@ export class HomeComponent {
     );
   }
 }
-
-// () {
-
-// }
-
-//() => {
-
-// }
-
-// (id: string) => {
-
-// }

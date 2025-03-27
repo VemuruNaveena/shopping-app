@@ -1,34 +1,12 @@
-<form [formGroup]="searchForm">
-  <label for="">course_id:</label>
-  <input
-    type="text"
-    name="course_id"
-    id="course_id"
-    formControlName="course_id"
-  />
-  <br />
+<div class="horizontal-menu">
+  @for (item of navItems; track $index) {
+  <a [routerLink]="item.path" routerLinkActive="active-udemy-menu">{{
+    item.label
+  }}</a>
 
-  <label for="">Title:</label>
-  <input type="text" name="title" id="title" formControlName="title" />
-  <br />
-  <label for="">Description:</label>
-  <input
-    type="text"
-    name="description"
-    id="description"
-    formControlName="description"
-  />
-  <br />
-  <label for="">Price:</label>
-  <input type="number" name="price" id="price" formControlName="price" />
-  <br />
-  <label for="">categoryType:</label>
-  <input
-    type="text"
-    name="categoryType"
-    id="categoryType"
-    formControlName="categoryType"
-  />
-  <br />
-  <button (click)="createCourse()">Create Course</button>
-</form>
+  }
+</div>
+
+<div class="main">
+  <router-outlet />
+</div>

@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserProfileService } from './user-profile.service';
+import { loginResponseApi } from './login/login-interfaces';
 
 @Component({
   selector: 'app-root',
@@ -10,21 +11,24 @@ import { UserProfileService } from './user-profile.service';
 })
 export class AppComponent {
   userProfileService = inject(UserProfileService);
+  showSpinner: boolean = false;
 
   ngOnInit() {
-    this.userProfileService.userProfileInfo.subscribe(
-      (data) => {
-        console.log(data);
-        // this.loggedInUsername = data;
-      },
-      () => {}
-    );
+    this.userProfileService.showSpinner$.subscribe((spinnerValue) => {
+      console.log(spinnerValue);
+      this.showSpinner = spinnerValue;
+    });
+
+    // this.userProfileService.userProfileInfo.subscribe(
+    //   (data: string) => {
+    //     console.log(data);
+    //     // this.loggedInUsername = data;
+    //   },
+    //   () => {}
+    // );
   }
 
   title = 'ShoppingApp';
-  outfitName: string = 'Jeans'; //variables
-  outfitPrice: number = 100;
-  sizesAvailable: string[] = ['Small', 'Medium', 'Large'];
   customer: any = {
     //object
     name: 'naveena',

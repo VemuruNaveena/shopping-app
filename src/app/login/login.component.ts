@@ -23,7 +23,7 @@ export class LoginComponent {
     this.createForm();
   }
 
-  private createForm() {
+  private createForm(): void {
     this.loginForm = new FormGroup({
       userName: new FormControl(null, [
         Validators.required,
@@ -34,37 +34,34 @@ export class LoginComponent {
     });
   }
 
-  login() {
+  login(): void {
+    // show spinner
+    this.userProfileService.show();
     console.log(this.loginForm);
     this.invalidCredentials = false;
     this.signUpService.loginUserApi(this.loginForm.value).subscribe(
       (response: loginResponseApi) => {
         this.handleSuccess(response);
       },
-      (error) => {
+      (error: any) => {
         this.handleError(error);
       }
     );
   }
 
-  private handleSuccess(response) {
+  private handleSuccess(response: loginResponseApi) {
     console.log(response);
-    //new service - variable
-    //this.userProfileService.userName = response.data.user.userName;
     this.userProfileService.updateUserName(response.data.user.userName);
+    this.userProfileService.updateData(response.data.user.role);
     this.router.navigate(['home']);
+    // turn off spinner
+    this.userProfileService.hide();
   }
 
-  private handleError(error) {
+  private handleError(error: any) {
     console.log(error);
     this.invalidCredentials = true;
+    this.userProfileService.hide();
+    // turn off spinner
   }
 }
-
-// true && true && true = true
-// true && false && true = false
-// false && false = false
-
-// true || true = true
-// true || false = true
-// false || false = false
