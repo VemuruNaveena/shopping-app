@@ -21,7 +21,7 @@ import { CategoryComponent } from './admin/category/category.component';
 import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   {
     path: 'men',

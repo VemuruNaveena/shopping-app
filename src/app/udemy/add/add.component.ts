@@ -14,7 +14,7 @@ export class AddComponent {
   courseList = [];
 
   udemyService = inject(UdemyService);
-  searchForm = new FormGroup({
+  createCourseForm = new FormGroup({
     course_id: new FormControl(),
     title: new FormControl(),
     description: new FormControl(),
@@ -49,12 +49,11 @@ export class AddComponent {
   }
 
   createCourse(): void {
-    console.log(this.searchForm);
-    console.log(this.searchForm.value);
-    this.udemyService.createCourseApi(this.searchForm.value).subscribe(
+    console.log(this.createCourseForm.value);
+    this.udemyService.createCourseApi(this.createCourseForm.value).subscribe(
       (response: udemyApiI) => {
         console.log(response);
-        this.searchForm.reset();
+        this.createCourseForm.reset();
         this.getCourses();
       },
       (error: any) => {

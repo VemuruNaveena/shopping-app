@@ -53,6 +53,7 @@ export class LoginComponent {
     console.log(response);
     this.userProfileService.updateUserName(response.data.user.userName);
     this.userProfileService.updateData(response.data.user.role);
+    sessionStorage.setItem('TOKEN', response.data.token);
     this.router.navigate(['home']);
     // turn off spinner
     this.userProfileService.hide();

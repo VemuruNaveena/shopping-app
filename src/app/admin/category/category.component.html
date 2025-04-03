@@ -6,4 +6,8 @@
   <input type="text" name="code" id="code" formControlName="code" />
   <br />
   <button (click)="create()">Create</button>
+
+  @if(showSucessMessage){
+  <div class="sucess-message">You have successfully created!!</div>
+  }
 </form>

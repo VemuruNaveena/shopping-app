@@ -69,6 +69,13 @@ button{
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+  .sucess-message{
+    background-color: #7cd17c;
+  padding: 6px;
+  padding-inline: 6px;
+  color: #0e310e;
+  border-radius: 8px;
+}
   
   /* Label styling */
   label {
@@ -207,4 +214,6 @@ option {
   color: black;
   width: 40%;
 }
+
+
   

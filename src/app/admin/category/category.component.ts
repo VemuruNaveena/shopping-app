@@ -16,11 +16,15 @@ export class CategoryComponent {
     code: new FormControl(''),
   });
 
+  showSucessMessage = false;
+
   create(): void {
+    this.showSucessMessage = false;
     this.categoryService.fetchCategory(this.categoryForm.value).subscribe(
       (response: categoryApiI) => {
         console.log(response);
         this.categoryForm.reset();
+        this.showSucessMessage = true;
       },
       (error: any) => {}
     );

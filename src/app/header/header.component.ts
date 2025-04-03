@@ -73,4 +73,9 @@ export class HeaderComponent implements OnInit {
   // getUserName() {
   //   this.loggedInUsername = this.userProfileService.userName;
   // }
+
+  logout() {
+    sessionStorage.removeItem('TOKEN');
+    this.router.navigate(['login']);
+  }
 }
