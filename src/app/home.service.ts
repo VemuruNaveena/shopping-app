@@ -4,26 +4,18 @@ import { VehicleApiResponseI } from './home/home-interfaces';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HomeService {
+  httpClient = inject(HttpClient);
 
-  httpClient = inject(HttpClient)
+  constructor() {}
 
-  constructor() { }
-
-  fetchData(): Observable<VehicleApiResponseI>{
+  fetchData(): Observable<VehicleApiResponseI> {
     console.log('xyz');
-    const response = this.httpClient.get<VehicleApiResponseI>('https://vpic.nhtsa.dot.gov/api/vehicles/GetVehicleTypesForMake/merc?format=json');
+    const response = this.httpClient.get<VehicleApiResponseI>(
+      'https://vpic.nhtsa.dot.gov/api/vehicles/GetVehicleTypesForMake/merc?format=json'
+    );
     return response;
   }
-
 }
-
-
-// https://vpic.nhtsa.dot.gov/api/vehicles/GetVehicleTypesForMake/merc?format=json - Get
-
-// C - create  - Post
-// R - retrieve - get
-// U - Update - put
-// D - Delete - delete

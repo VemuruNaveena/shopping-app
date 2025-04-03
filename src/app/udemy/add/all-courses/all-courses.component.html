@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(list of courseListInput; track $index){
+    <tr>
+      <td>{{ list.title }}</td>
+      <td>{{ list.price }}</td>
+      <td>{{ list.category.type }}</td>
+    </tr>
+
+    }
+  </tbody>
+</table>

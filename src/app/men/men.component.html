@@ -1,2 +1,12 @@
 <p>men works!</p>
 <button>Fetch All Shirts</button>
+
+<ul>
+  <li><a (click)="navigateTo('tops')">Tops</a></li>
+  <li><a (click)="navigateTo('bottoms')">Bottoms</a></li>
+  <li><a (click)="navigateTo('accessories')">Accessories</a></li>
+</ul>
+
+<div class="main">
+  <router-outlet></router-outlet>
+</div>

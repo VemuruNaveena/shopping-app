@@ -1,0 +1,19 @@
+<form [formGroup]="seachForm">
+  <input
+    type="text"
+    placeholder="Enter Country..."
+    formControlName="countryName"
+  />
+  <!-- <input type="text" placeholder="Enter City..." formControlName="cityName" /> -->
+  <button [disabled]="!seachForm.valid" (click)="seachByCountry()">
+    Search
+  </button>
+</form>
+
+@if(isError) {
+<div class="error-message">
+  {{ errorMessage }}
+</div>
+} @if(collegeList.length > 0) {
+<app-college-table [collegeList]="collegeList"></app-college-table>
+}

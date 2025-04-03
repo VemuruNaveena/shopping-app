@@ -1,0 +1,40 @@
+@if(invalidCredentials) {
+<h2 class="error-msg">Invalid Credentials..</h2>
+}
+
+<form [formGroup]="loginForm">
+  <label for="userName">User Name</label>
+  <input type="text" name="userName" id="userName" formControlName="userName" />
+  <br />
+  <!-- @if(loginForm.controls['userName']['errors']['required']) {
+  <div class="error-msg">username is a required Field</div>
+  }  -->
+
+  @if(loginForm.get('userName').hasError('required') &&
+  loginForm.get('userName').touched) {
+  <div class="error-msg">username is a required Field</div>
+  } @if(loginForm.get('userName').hasError('minlength')) {
+  <div class="error-msg">Min 4 chars is required</div>
+  } @if(loginForm.get('userName').hasError('maxlength')) {
+  <div class="error-msg">Max 15 CHars are allowed</div>
+  }
+  <br />
+  <label for="">Password</label>
+  <input
+    type="password"
+    name="password"
+    id="password"
+    formControlName="password"
+  />
+  <br />
+  @if(loginForm.get('password').hasError('required') &&
+  loginForm.get('password').touched) {
+  <div class="error-msg">Password is a required Field</div>
+  }
+  <br />
+  <button [disabled]="!loginForm.valid" type="submit" (click)="login()">
+    Login User
+  </button>
+</form>
+
+<!--  -->

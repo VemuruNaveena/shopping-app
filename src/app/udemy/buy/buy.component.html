@@ -1,0 +1,25 @@
+<button (click)="buyCourses()">Buy COurses</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Select</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(list of UnEnrolledCourses; track $index){
+    <tr>
+      <td>
+        <input type="checkbox" (change)="onCheckboxChange($event, list)" />
+      </td>
+      <td>{{ list?.title }}</td>
+      <td>{{ list?.price }}</td>
+      <td>{{ list?.categoryType }}</td>
+    </tr>
+
+    }
+  </tbody>
+</table>

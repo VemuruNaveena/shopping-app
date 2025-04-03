@@ -1,0 +1,10 @@
+<form [formGroup]="accountForm">
+  <label for="">Account id</label>
+  <input type="text" name="id" id="id" formControlName="id" />
+  <br />
+  <label for="">Type</label>
+  <input type="text" name="type" id="type" formControlName="type" />
+  <br />
+
+  <button (click)="create()">Create</button>
+</form>

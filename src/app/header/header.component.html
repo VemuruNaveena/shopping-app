@@ -1,1 +1,35 @@
-<p>header works!</p>
+<!-- <ul>
+  <li><a class="active" (click)="navigateTo('home')">Home</a></li>
+  <li><a (click)="navigateTo('men')">Men</a></li>
+  <li><a (click)="navigateTo('women')">Women</a></li>
+  <li><a (click)="navigateTo('kids')">kids</a></li>
+  <li><a (click)="navigateTo('university')">University</a></li>
+  <li><a (click)="navigateTo('games')">Games</a></li>
+  <li><a (click)="navigateTo('college')">College</a></li>
+  <li><a (click)="navigateTo('signup')">Signup</a></li>
+  <li><a (click)="navigateTo('login')">Login</a></li>
+</ul> -->
+{{ name }}
+<button (click)="runFunction()">Change</button>
+<div class="nav-container">
+  <nav class="navbar">
+    <ul class="menu">
+      @for(nav of navItems; track $index) {
+      <li class="menu-item">
+        <a [routerLink]="nav.routePath" routerLinkActive="active">{{
+          nav.label
+        }}</a>
+      </li>
+      }
+      <li class="menu-item" (click)="logout()"><a>Logout</a></li>
+      <!-- 
+  <button (click)="getUserName()">Get User Info</button> -->
+      <div class="user-name-section">
+        UserName::{{ loggedInUsername }}, Role: {{ loggedInRole }}
+      </div>
+      <div class="user-name-section">
+        Cart Items::{{ noOfItemsAddedToCart }}
+      </div>
+    </ul>
+  </nav>
+</div>

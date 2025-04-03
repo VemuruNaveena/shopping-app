@@ -1,0 +1,35 @@
+<form [formGroup]="createCourseForm">
+  <label for="">course_id:</label>
+  <input
+    type="text"
+    name="course_id"
+    id="course_id"
+    formControlName="course_id"
+  />
+  <br />
+
+  <label for="">Title:</label>
+  <input type="text" name="title" id="title" formControlName="title" />
+  <br />
+  <label for="">Description:</label>
+  <input
+    type="text"
+    name="description"
+    id="description"
+    formControlName="description"
+  />
+  <br />
+  <label for="">Price:</label>
+  <input type="number" name="price" id="price" formControlName="price" />
+  <br />
+  <label for="">categoryType:</label>
+  <select name="categoryType" id="categoryType" formControlName="categoryType">
+    @for(cat of catList; track $index) {
+    <option [value]="cat.code">{{ cat.type }}</option>
+    }
+  </select>
+  <br />
+  <button (click)="createCourse()">Create Course</button>
+</form>
+
+<app-all-courses [courseListInput]="courseList"></app-all-courses>

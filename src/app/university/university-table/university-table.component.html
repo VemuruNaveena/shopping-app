@@ -1,0 +1,16 @@
+<h3>No of Universities: {{ universityList.length }}</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let university of universityList">
+    <td>{{ university.name }}</td>
+    <td>{{ university.alpha_two_code }}</td>
+    <td>{{ university.country }}</td>
+  </tr>
+</table>

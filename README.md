@@ -1,25 +1,36 @@
-.border-container{
-position: absolute; /_ Moves buttons to an exact position _/
-top: 200px; /_ Distance from the top _/
-right: 100px; /_ Distance from the right _/
-display: flex;
-flex-direction: column; /_ Stack buttons vertically _/
-gap: 10px; /_ Adds spacing between buttons _/
+C - create - Post
+R - retrieve - get
+U - Update - put
+D - Delete - delete
+
+true && true && true = true
+true && false && true = false
+false && false = false
+
+true || true = true
+true || false = true
+false || false = false
+
+https://fastly.picsum.photos/id/51/200/300.jpg?hmac=w7933XDRbSqrql6BuyEfFBOeVsO60iU5N_OS5FbO6wQ
+POST
+{
+userName: 'some val',
+userEmail:'some val',
+password: 'some val',
+confirmPassword: 'some val',
+role: 'some val',
 }
 
-button {
-padding: 10px 20px;
-border: 2px solid #ccc;
-background-color: rgb(198, 70, 70);
-font-size: 16px;
-border-color:rgb(186, 162, 166);
-border-radius: 10px;
-color: white;
+# topics
 
-}
-
-<div class="border-container">
-  <button (click)="bride()">Bride</button><br />
-  <button (click)="groom()">Groom</button><br />
-  <button (click)="bridesMaid()">Bride's Maid</button>
-</div>
+1. Class, variables, functions, functions with return types, ...spread operator, forLoop
+2. Routing, lazy loading, interpolation, child Routing
+3. API calls (GET, PUT, POST, DELETE), dependency injection
+4. Component - to - Component communication (@Input)
+5. Reactive Forms( Backend, Mongodb), validators
+6. Pipes
+7. Single-Page Application(SPA)
+8. Behaviour Subject (Private variables & functions)
+9. Interceptors(Custom Headers, multiple interceptors)
+10. Spinners(Customer engaging)
+11. RouteGuards(CanActivate, CanDeactivate, CanMatch(Lazy-Loading),CanChildActivate)

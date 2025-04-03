@@ -1,0 +1,12 @@
+<div class="horizontal-menu">
+  @for (item of navItems; track $index) {
+  <a [routerLink]="item.path" routerLinkActive="active-udemy-menu">{{
+    item.label
+  }}</a>
+
+  }
+</div>
+
+<div class="main">
+  <router-outlet />
+</div>
