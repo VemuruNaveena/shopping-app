@@ -1,36 +1,30 @@
-C - create - Post
-R - retrieve - get
-U - Update - put
-D - Delete - delete
+# CartSync - Full Stack Shopping Application
 
-true && true && true = true
-true && false && true = false
-false && false = false
+A full-stack e-commerce application built with Angular, Node.js, and MongoDB 
+demonstrating core Angular concepts and REST API integration.
 
-true || true = true
-true || false = true
-false || false = false
+## Tech Stack
+- **Frontend:** Angular, TypeScript, Reactive Forms, RxJS
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **API:** RESTful (GET, POST, PUT, DELETE)
 
-https://fastly.picsum.photos/id/51/200/300.jpg?hmac=w7933XDRbSqrql6BuyEfFBOeVsO60iU5N_OS5FbO6wQ
-POST
-{
-userName: 'some val',
-userEmail:'some val',
-password: 'some val',
-confirmPassword: 'some val',
-role: 'some val',
-}
+## Features
+- User authentication (Register, Login, Role-based access)
+- Product listing and real-time cart management
+- Route Guards (CanActivate, CanDeactivate, CanMatch)
+- Lazy loading with child routing
+- HTTP Interceptors with custom headers
+- Behaviour Subject for state management
+- Reactive Forms with validators
+- Loading spinners for better UX
+- Pipes for data transformation
 
-# topics
-
-1. Class, variables, functions, functions with return types, ...spread operator, forLoop
-2. Routing, lazy loading, interpolation, child Routing
-3. API calls (GET, PUT, POST, DELETE), dependency injection
-4. Component - to - Component communication (@Input)
-5. Reactive Forms( Backend, Mongodb), validators
-6. Pipes
-7. Single-Page Application(SPA)
-8. Behaviour Subject (Private variables & functions)
-9. Interceptors(Custom Headers, multiple interceptors)
-10. Spinners(Customer engaging)
-11. RouteGuards(CanActivate, CanDeactivate, CanMatch(Lazy-Loading),CanChildActivate)
+## Angular Concepts Covered
+- Component communication (@Input)
+- Dependency Injection
+- Interceptors
+- Route Guards
+- Lazy Loading
+- Single Page Application (SPA)
+- Reactive Forms + MongoDB integration
